@@ -5,7 +5,7 @@ Rock-paper-scissors game - based on The Odin Project
 Welcome to the Rock-Paper-Scissors game! This simple web-based game allows you to play the classic Rock-Paper-Scissors against the computer. The game is implemented using **HTML**, **JavaScript**, and the browser's built-in `prompt` and `console` functions.
 
 ### Running the Game
-To play the game, open this [LINK](https://markdownlivepreview.com/) in a web browser. Open the Chrome Dev Tools console and the game interface will prompt you to enter your choices and will provide feedback on the winner of each round.
+To play the game, open this [LINK](https://relieze.github.io/odin-rock-paper-scissors/) in a web browser. Open the Chrome Dev Tools console and the game interface will prompt you to enter your choices and will provide feedback on the winner of each round.
 
 ### Skills Utilized
 
