@@ -26,9 +26,8 @@ function playRound(playerSelection, computerSelection, round) {
   return outcome;
 }
 
-const rockBtn = document.querySelector("button.Rock");
-const paperBtn = document.querySelector("button.Paper");
-const scissorsBtn = document.querySelector("button.Scissors");
+const rpsBtns = document.querySelectorAll(".buttons button");
+rpsBtns.forEach((btn) => btn.addEventListener("click", handlePlayerChoice));
 
 let round = 1, roundsWon = 0;
 
@@ -52,6 +51,3 @@ function updateScore() {
   computerScore.textContent = `Computer Score: ${round - roundsWon}`;
 }
 
-rockBtn.addEventListener("click", handlePlayerChoice);
-paperBtn.addEventListener("click", handlePlayerChoice);
-scissorsBtn.addEventListener("click", handlePlayerChoice);
