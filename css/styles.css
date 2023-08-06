@@ -1,12 +1,30 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-top: 100px;
+}
+
 .buttons {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 3rem;
 }
 
 .buttons button {
   flex-basis: 25%;
   padding: 2rem;
 }
+
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+p {
+  flex-basis: 25%;
+}
+
