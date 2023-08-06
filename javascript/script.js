@@ -39,9 +39,7 @@ function handlePlayerChoice(event) {
   if (outcome === "tie") {
     round--;
     document.querySelector(".roundMessage").textContent = "You tied! Go again!";
-  } else {
-    roundsWon += outcome;
-  }
+  } else roundsWon += outcome;
 
   updateScore();
   round ++;
