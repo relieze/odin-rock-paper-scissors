@@ -38,7 +38,7 @@ function handlePlayerChoice(event) {
   // if a tie, round is repeated 
   if (outcome === "tie") {
     round--;
-    console.log("You tied! Go again!");
+    document.querySelector(".roundMessage").textContent = "You tied! Go again!";
   } else {
     roundsWon += outcome;
   }
