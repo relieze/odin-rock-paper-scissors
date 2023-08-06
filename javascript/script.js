@@ -41,8 +41,17 @@ function handlePlayerChoice(event) {
   } else {
     roundsWon += outcome;
   }
+
+  updateScore();
   round ++;
 };
+
+function updateScore() {
+  const playerScore = document.querySelector(".playerScore");
+  const computerScore = document.querySelector(".computerScore");
+  playerScore.textContent = `Player Score: ${roundsWon}`;
+  computerScore.textContent = `Computer Score: ${round - roundsWon}`;
+}
 
 rockBtn.addEventListener("click", handlePlayerChoice);
 paperBtn.addEventListener("click", handlePlayerChoice);
