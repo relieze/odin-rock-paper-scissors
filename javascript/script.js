@@ -16,11 +16,12 @@ function playRound(playerSelection, computerSelection, round) {
     (playerSelection === "Paper" && computerSelection === "Rock");
 
   // print winner of round based on "outcome"
-  console.log(
+  const roundMessage = document.querySelector(".roundMessage");
+  roundMessage.textContent = 
     outcome
       ? `Round ${round}: You win! ${playerSelection} beats ${computerSelection}.`
       : `Round ${round}: You Lose! ${computerSelection} beats ${playerSelection}.`
-  );
+  ;
 
   return outcome;
 }
