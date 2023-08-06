@@ -27,7 +27,7 @@ function playRound(playerSelection, computerSelection, round) {
 }
 
 const rpsBtns = document.querySelectorAll(".buttons button");
-rpsBtns.forEach((btn) => btn.addEventListener("click", handlePlayerChoice));
+rpsBtns.forEach(btn => btn.addEventListener("click", handlePlayerChoice));
 
 let round = 1, roundsWon = 0;
 
@@ -39,6 +39,13 @@ function handlePlayerChoice(event) {
     round--;
     document.querySelector(".roundMessage").textContent = "You tied! Go again!";
   } else roundsWon += outcome;
+  
+  // end and display winner if 3 rounds are won by either contender
+  if (roundsWon === 5 || roundsWon === round - 5) {
+    rpsBtns.forEach(btn => btn.removeEventListener("click", handlePlayerChoice));
+    document.querySelector(".gameOver").textContent = 
+      roundsWon === 5 ? "YOU WON!!!!!" : "Awww, you lost... Better luck next time!"
+  }
 
   updateScore();
   round ++;
@@ -50,4 +57,3 @@ function updateScore() {
   playerScore.textContent = `Player Score: ${roundsWon}`;
   computerScore.textContent = `Computer Score: ${round - roundsWon}`;
 }
-
