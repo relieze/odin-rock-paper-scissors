@@ -25,34 +25,25 @@ function playRound(playerSelection, computerSelection, round) {
   return outcome;
 }
 
-function game() {
-  let roundsWon = 0;
+const rockBtn = document.querySelector("button.Rock");
+const paperBtn = document.querySelector("button.Paper");
+const scissorsBtn = document.querySelector("button.Scissors");
 
-  // run five rounds, prompting user for their choice, and receiving computer's choice
-  for (let round = 1; round <= 5; round++) {
-    let playerSelection = prompt("Rock, Paper, or Scissors? ");
-    let computerSelection = getComputerChoice();
+let round = 1, roundsWon = 0;
 
-    // reformat user's choice for capitalization
-    playerSelection =
-      playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
+function handlePlayerChoice(event) {
+  let outcome = playRound(event.target.classList[0], getComputerChoice(), round);
 
-    const outcome = playRound(playerSelection, computerSelection, round);
-
-    // if a tie, round is repeated 
-    if (outcome === "tie") {
-      round--;
-      console.log("You tied! Go again!");
-    } else {
-      roundsWon += outcome;
-    }
-
-    if (roundsWon === 3 || roundsWon === round - 3) break;
+  // if a tie, round is repeated 
+  if (outcome === "tie") {
+    round--;
+    console.log("You tied! Go again!");
+  } else {
+    roundsWon += outcome;
   }
+  round ++;
+};
 
-  return roundsWon;
-}
-
-console.log(
-  game() === 3 ? "YOU WON!!!!!" : "Awww, you lost... Better luck next time!"
-);
+rockBtn.addEventListener("click", handlePlayerChoice);
+paperBtn.addEventListener("click", handlePlayerChoice);
+scissorsBtn.addEventListener("click", handlePlayerChoice);
